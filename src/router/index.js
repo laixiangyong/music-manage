@@ -1,29 +1,50 @@
-import Vue from 'vue'
+
 import VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import Login from '../pages/Login.vue'
+import InfoPage from '../pages/InfoPage.vue'
+import ConsumerPage from '../pages/ConsumerPage.vue'
+import SingerPage from '../pages/SingerPage.vue'
+import SongListPage from '../pages/SongListPage.vue'
+import SongPage from '../pages/SongPage.vue'
+import Home from '../components/Home.vue'
+import ListSongPage from '../pages/ListSongPage.vue'
 
-Vue.use(VueRouter)
-
-const routes = [
-  {
-    path: '/',
-    name: 'home',
-    component: HomeView
-  },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: function () {
-      return import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-    }
-  }
-]
-
-const router = new VueRouter({
-  routes
+// 创建并暴露一个路由器
+export default new VueRouter({
+  routes: [
+    {
+      path: '/',
+      component: Login
+    },
+    {
+      path: '/Home',
+      component: Home,
+      children: [
+        {
+          path: '/Info',
+          component: InfoPage
+        },
+        {
+          path: '/Consumer',
+          component: ConsumerPage
+        },
+        {
+          path: '/Singer',
+          component: SingerPage
+        },
+        {
+          path: '/SongList',
+          component: SongListPage
+        },
+        {
+          path: '/Song',
+          component: SongPage
+        },
+        {
+          path: '/ListSong',
+          component: ListSongPage
+        },
+      ]
+    },
+  ]
 })
-
-export default router
