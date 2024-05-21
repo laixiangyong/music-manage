@@ -112,7 +112,6 @@ export default {
         this.consumerCount = res.length;
         this.consumerSex.rows[0]['总数'] = this.setSex(1,this.consumer);
         this.consumerSex.rows[1]['总数'] = this.setSex(0,this.consumer);
-        
       })
     },
     setSex(sex,consumer){//根据性别获取用户数
