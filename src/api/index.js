@@ -23,6 +23,8 @@ export const delSong = (id)=>get(`song/delete?id=${id}`);
 export const songOfSongId = (id) => get(`song/detail?songId=${id}`);
 // 根据歌曲名获取歌曲对象
 export const songOfSongName = (songName) => get(`song/songOfSongName?songName=${songName}`);
+// 获取所有歌曲
+export const allSong = () => get(`song/allSong`);
 
 
 // 查询歌单
