@@ -43,7 +43,7 @@
         </el-card>
       </el-col>
     </el-row>
-    <!--  -->
+    <!-- 图表 -->
     <el-row :gutter="20" class="mgb20">
       <el-col :span="12">
         <h3>用户性别比例</h3>
